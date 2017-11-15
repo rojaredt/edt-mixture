@@ -1,0 +1,14 @@
+# TouchGFX Template
+*.log
+touchgfx/**/**/touchgfx/
+
+﻿# TouchGFX with Visual Studio and other
+**/**/**/build/
+**/**/**/generated/
+**/**/**/simulator/msvs/.vs/
+
+# TouchGFX with IAR
+**/**/**/target/IAR8.x/Debug
+**/**/**/target/IAR8.x/settings
+**/**/**/target/IAR8.x/*.dep
+**/**/**/target/IAR8.x/*.ewt
