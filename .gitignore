@@ -6,6 +6,7 @@ touchgfx/**/**/touchgfx/
 **/**/**/build/
 **/**/**/generated/
 **/**/**/simulator/msvs/.vs/
+**/**/**/simulator/msvs/screenshots/
 
 # TouchGFX with IAR
 **/**/**/target/IAR8.x/Debug
