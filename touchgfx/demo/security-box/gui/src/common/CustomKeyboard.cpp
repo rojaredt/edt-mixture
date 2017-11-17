@@ -2,7 +2,9 @@
 //#include <touchgfx/Utils.hpp>
 #include <touchgfx/hal/HAL.hpp>
 
-CustomKeyboard::CustomKeyboard() : keyboard(),
+CustomKeyboard::CustomKeyboard() : 
+	tick(0),
+	keyboard(),
     modeBtnTextArea(),
     capslockPressed(this, &CustomKeyboard::capslockPressedHandler),
     backspacePressed(this, &CustomKeyboard::backspacePressedHandler),
@@ -39,14 +41,16 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     setKeyMappingList();
 
 	cursor.setPosition(cursor_, 25, 10, 60);
-	cursor.setColor(touchgfx::Color::getColorFrom24BitRGB(64, 64, 64));
-	cursor.setAlpha(128);	
+	cursor.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	cursor.setAlpha(50);
 
     add(keyboard);
 	add(cursor);
     //add(modeBtnTextArea);
 
 	//modePressedHandler();
+
+	Application::getInstance()->registerTimerWidget(this);
 }
 
 void CustomKeyboard::setKeyMappingList()
@@ -124,7 +128,7 @@ void CustomKeyboard::modePressedHandler()
 
 void CustomKeyboard::keyPressedhandler(Unicode::UnicodeChar keyChar)
 {
-	uint16_t pos = keyboard.getBufferPosition();
+	//uint16_t pos = keyboard.getBufferPosition();
 
     // After the first keypress, the keyboard will shift to lowercase.
     if (firstCharacterEntry && keyChar != 0)
@@ -229,4 +233,23 @@ bool CustomKeyboard::checkAccount()
 	}
 
 	return false;
+}
+
+void CustomKeyboard::handleTickEvent()
+{
+	if ((tick % 30) == 0)
+	{
+		if (cursor.getAlpha() == 50) 
+		{
+			cursor.setAlpha(10);
+		}
+		else
+		{
+			cursor.setAlpha(50);
+		}
+		
+		cursor.invalidate();
+	}
+
+	tick++;
 }

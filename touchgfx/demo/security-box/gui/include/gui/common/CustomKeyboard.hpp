@@ -37,6 +37,8 @@ public:
 
 	bool checkAccount();
 
+	virtual void handleTickEvent();
+
 private:
 	static const uint16_t cursor_ = 28;
 
@@ -45,6 +47,8 @@ private:
      * The size determines how much text the keyboard can contain in its textfield.
      */
     static const uint8_t BUFFER_SIZE = 13;
+
+	uint16_t tick;
 
     /**
      * The keyboard which this CustomKeyboard wraps.
