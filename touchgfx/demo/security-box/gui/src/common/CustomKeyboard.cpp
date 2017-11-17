@@ -4,6 +4,7 @@
 
 CustomKeyboard::CustomKeyboard() : 
 	tick(0),
+	keyboardNumberpad_(false),
 	keyboard(),
     modeBtnTextArea(),
     capslockPressed(this, &CustomKeyboard::capslockPressedHandler),
@@ -44,11 +45,20 @@ CustomKeyboard::CustomKeyboard() :
 	cursor.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 	cursor.setAlpha(50);
 
+	message_.setPosition(cursor_ + 20, 20, 410, 60);
+	message_.setWildcard(message_buffer_);
+	message_.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	message_.setAlpha(100);
+	message_.setLinespacing(0);
+	message_.setTypedText(TypedText(T_ENTEREDTEXT));
+
     add(keyboard);
 	add(cursor);
-    //add(modeBtnTextArea);
-
-	//modePressedHandler();
+	add(message_);
+    
+	Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
+	Unicode::snprintf(message_buffer_, 5, "%s", list);
+	message_.invalidate();
 
 	Application::getInstance()->registerTimerWidget(this);
 }
@@ -93,7 +103,8 @@ void CustomKeyboard::backspacePressedHandler()
         //Change keymappings if we have reached the first position.
         if (1 == pos)
         {
-            //firstCharacterEntry = true;
+			message_.setVisible(true);
+            firstCharacterEntry = true;
             //uppercaseKeys = true;
             //setKeyMappingList();
         }
@@ -133,6 +144,7 @@ void CustomKeyboard::keyPressedhandler(Unicode::UnicodeChar keyChar)
     // After the first keypress, the keyboard will shift to lowercase.
     if (firstCharacterEntry && keyChar != 0)
     {
+		message_.setVisible(false);
         firstCharacterEntry = false;
         //uppercaseKeys = false;
         setKeyMappingList();
@@ -157,6 +169,13 @@ void CustomKeyboard::enterUserPressedHandler()
 	keyboard.setBuffer(buffer, BUFFER_SIZE);
 
 	modePressedHandler();
+
+	message_.setVisible(true);
+	Unicode::UnicodeChar msg[] = { 0x0050, 0x0041, 0x0053, 0x0053, 0x0057, 0x004F, 0x0052, 0x0044 };
+	Unicode::snprintf(message_buffer_, 9, "%s", msg);
+	message_.invalidate();
+
+	firstCharacterEntry = true;
 }
 
 void CustomKeyboard::enterPasswordPressedHandler()
@@ -166,6 +185,8 @@ void CustomKeyboard::enterPasswordPressedHandler()
 	if (checkAccount()) {
 		if (checkAccountCallback && checkAccountCallback->isValid())
 		{
+			
+
 			checkAccountCallback->execute(true);
 		}
 	}
@@ -177,8 +198,23 @@ void CustomKeyboard::enterPasswordPressedHandler()
 		}
 	}
 
-	//memset(buffer, 0, 15 * sizeof(buffer) / BUFFER_SIZE);
-	//keyboard.setBuffer(buffer, BUFFER_SIZE);
+	firstCharacterEntry = true;
+	uppercaseKeys = true;
+
+	modePressedHandler();
+
+	keyboard.setLayout(&layout);
+	keyboard.setKeyListener(keyPressed);	
+	keyboard.setPosition(0, 0, 640, 392);
+	keyboard.setTextIndentation();
+	
+	memset(buffer, 0, 15 * sizeof(buffer) / BUFFER_SIZE);
+	keyboard.setBuffer(buffer, BUFFER_SIZE);
+
+	Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
+	Unicode::snprintf(message_buffer_, 5, "%s", list);
+	message_.setVisible(true);
+	message_.invalidate();
 }
 
 void CustomKeyboard::setTouchable(bool touch)

@@ -49,6 +49,7 @@ private:
     static const uint8_t BUFFER_SIZE = 13;
 
 	uint16_t tick;
+	bool keyboardNumberpad_;
 
     /**
      * The keyboard which this CustomKeyboard wraps.
@@ -60,7 +61,8 @@ private:
 	 */
 	Box cursor;
 
-	GenericCallback<const bool>* checkAccountCallback;
+	TextAreaWithOneWildcard message_;
+	Unicode::UnicodeChar message_buffer_[10];
 
     /**
      * The buffer used by the keyboard for text input.
@@ -92,6 +94,8 @@ private:
 
 	Callback<CustomKeyboard> enterUserPressed;
 	Callback<CustomKeyboard> enterPasswordPressed;
+
+	GenericCallback<const bool>* checkAccountCallback;
 
     /**
      * Callback for when keys are pressed on the keyboard.
