@@ -1052,6 +1052,11 @@
               <FilePath>../../generated/images/src/keyboard_key_shift_highlighted_112x80.cpp</FilePath>
             </File>
             <File>
+              <FileName>keyboard_mask.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/keyboard_mask.cpp</FilePath>
+            </File>
+            <File>
               <FileName>keyboard_numberpad_background.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/images/src/keyboard_numberpad_background.cpp</FilePath>

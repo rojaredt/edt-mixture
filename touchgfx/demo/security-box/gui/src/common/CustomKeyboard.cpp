@@ -1,5 +1,4 @@
 #include <gui/common/CustomKeyboard.hpp>
-//#include <touchgfx/Utils.hpp>
 #include <touchgfx/hal/HAL.hpp>
 
 CustomKeyboard::CustomKeyboard() : 
@@ -52,10 +51,14 @@ CustomKeyboard::CustomKeyboard() :
 	message_.setLinespacing(0);
 	message_.setTypedText(TypedText(T_ENTEREDTEXT));
 
+	mask_.setXY(-640, 0);
+	mask_.setBitmap(Bitmap(BITMAP_KEYBOARD_MASK_ID));
+
     add(keyboard);
 	add(cursor);
 	add(message_);
-    
+	add(mask_);
+
 	Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
 	Unicode::snprintf(message_buffer_, 5, "%s", list);
 	message_.invalidate();
@@ -178,6 +181,12 @@ void CustomKeyboard::enterUserPressedHandler()
 	firstCharacterEntry = true;
 }
 
+void CustomKeyboard::openMask()
+{
+	mask_.clearMoveAnimationEndedAction();
+	mask_.startMoveAnimation(-640, 0, 30, EasingEquations::linearEaseOut, EasingEquations::linearEaseIn);
+}
+
 void CustomKeyboard::enterPasswordPressedHandler()
 {	
 	HAL::getInstance()->blockCopy(bufferPassword, buffer, 15 * sizeof(buffer) / BUFFER_SIZE);
@@ -185,7 +194,8 @@ void CustomKeyboard::enterPasswordPressedHandler()
 	if (checkAccount()) {
 		if (checkAccountCallback && checkAccountCallback->isValid())
 		{
-			
+			mask_.clearMoveAnimationEndedAction();
+			mask_.startMoveAnimation(0, 0, 60, EasingEquations::bounceEaseOut, EasingEquations::linearEaseIn);
 
 			checkAccountCallback->execute(true);
 		}

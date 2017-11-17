@@ -217,6 +217,22 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Pressed": "lock.png",
+            "Released": "unlocked.png",
+            "Alpha": 255,
+            "Name": "buttonLock",
+            "X": 715,
+            "Y": 11,
+            "Width": 75,
+            "Height": 75,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -260,6 +276,18 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Log",
               "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionClickButtonLock",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonLock",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "clickButtonLock",
+              "Type": "ActionCustom"
             }
           }
         ],

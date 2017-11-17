@@ -13,9 +13,11 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-protected:
 
+protected:
 	CustomKeyboard keyboard;
+
+	virtual void clickButtonLock();
 
 	Callback<MainView, const bool> checkAccountCallback;
 	void checkAccountCallbackHandler(bool valid);

@@ -235,6 +235,18 @@
     <Filter Include="Header Files\generated\gui_generated\info_screen">
       <UniqueIdentifier>809FAE9B-F715-49AF-84D7-121AAF15E0C0</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>B49B10FC-E335-44CC-9E79-5F0C06EEF3DC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>E5953CDF-14CB-4708-A5D8-FAE9E2A647D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>F8C45313-806B-4CC6-A88F-A9DA19684E38</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>FB4FDA9D-D43F-433D-BB02-318CEFC3BE26</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">

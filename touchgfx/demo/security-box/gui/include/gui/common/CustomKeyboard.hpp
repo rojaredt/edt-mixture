@@ -4,6 +4,7 @@
 #include <touchgfx/widgets/Keyboard.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/mixins/MoveAnimator.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <gui/common/KeyboardLayout.hpp>
 #include <fonts/ApplicationFontProvider.hpp>
@@ -35,6 +36,8 @@ public:
 		checkAccountCallback = &callback;
 	}
 
+	void openMask();
+
 	bool checkAccount();
 
 	virtual void handleTickEvent();
@@ -60,6 +63,8 @@ private:
 	 * The cursor for keyboard.
 	 */
 	Box cursor;
+
+	MoveAnimator<Image> mask_;
 
 	TextAreaWithOneWildcard message_;
 	Unicode::UnicodeChar message_buffer_[10];
