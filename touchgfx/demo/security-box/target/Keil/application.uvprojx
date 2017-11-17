@@ -1052,6 +1052,16 @@
               <FilePath>../../generated/images/src/keyboard_key_shift_highlighted_112x80.cpp</FilePath>
             </File>
             <File>
+              <FileName>keyboard_numberpad_background.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/keyboard_numberpad_background.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>keyboard_numberpad_key_highlighted.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/images/src/keyboard_numberpad_key_highlighted.cpp</FilePath>
+            </File>
+            <File>
               <FileName>LanguageGb.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/texts/src/languagegb.cpp</FilePath>

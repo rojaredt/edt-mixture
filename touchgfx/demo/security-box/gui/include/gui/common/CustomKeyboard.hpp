@@ -30,7 +30,16 @@ public:
      */
     void setTouchable(bool touch);
 
+	void setCheckAccountAction(GenericCallback<const bool>& callback)
+	{
+		checkAccountCallback = &callback;
+	}
+
+	bool checkAccount();
+
 private:
+	static const uint16_t cursor_ = 28;
+
     /*
      * The size of the buffer that is used by the keyboard.
      * The size determines how much text the keyboard can contain in its textfield.
@@ -42,10 +51,20 @@ private:
      */
     Keyboard keyboard;
 
+	/*
+	 * The cursor for keyboard.
+	 */
+	Box cursor;
+
+	GenericCallback<const bool>* checkAccountCallback;
+
     /**
      * The buffer used by the keyboard for text input.
      */
     Unicode::UnicodeChar buffer[BUFFER_SIZE];
+
+	Unicode::UnicodeChar bufferUser[BUFFER_SIZE];
+	Unicode::UnicodeChar bufferPassword[BUFFER_SIZE];
 
     /**
      * Used to display text on top of the button for changing keyboard mode.
@@ -66,6 +85,9 @@ private:
      * Callback for the keyboard mode button.
      */
     Callback<CustomKeyboard> modePressed;
+
+	Callback<CustomKeyboard> enterUserPressed;
+	Callback<CustomKeyboard> enterPasswordPressed;
 
     /**
      * Callback for when keys are pressed on the keyboard.
@@ -107,11 +129,16 @@ private:
      */
     void modePressedHandler();
 
+	void enterUserPressedHandler();
+	void enterPasswordPressedHandler();
+
     /**
      * Callback handler for key presses.
      * @param keyChar The UnicodeChar for the key that was pressed.
      */
     void keyPressedhandler(Unicode::UnicodeChar keyChar);
+
+	void moveCursor();
 };
 
 #endif /* TGFXKEYBOARD_HPP_ */

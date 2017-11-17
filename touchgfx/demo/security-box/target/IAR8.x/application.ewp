@@ -1154,6 +1154,12 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_shift_highlighted_112x80.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_numberpad_background.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_numberpad_key_highlighted.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\lock.cpp</name>
         </file>
         <file>

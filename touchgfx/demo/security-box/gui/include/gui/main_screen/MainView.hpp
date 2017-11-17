@@ -16,6 +16,9 @@ public:
 protected:
 
 	CustomKeyboard keyboard;
+
+	Callback<MainView, const bool> checkAccountCallback;
+	void checkAccountCallbackHandler(bool valid);
 };
 
 #endif // MAIN_VIEW_HPP
