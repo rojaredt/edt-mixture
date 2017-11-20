@@ -4,6 +4,7 @@
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/common/CustomKeyboard.hpp>
+#include <gui/common/Mask.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class MainView : public MainViewBase
@@ -16,6 +17,7 @@ public:
 
 protected:
 	CustomKeyboard keyboard;
+	Mask mask_;
 
 	virtual void clickButtonLock();
 

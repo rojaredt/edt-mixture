@@ -312,6 +312,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\info_screen\InfoViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\info_screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\Mask.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx">
@@ -786,6 +789,9 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\info_screen\InfoViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\info_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\Mask.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -51,13 +51,9 @@ CustomKeyboard::CustomKeyboard() :
 	message_.setLinespacing(0);
 	message_.setTypedText(TypedText(T_ENTEREDTEXT));
 
-	mask_.setXY(-640, 0);
-	mask_.setBitmap(Bitmap(BITMAP_KEYBOARD_MASK_ID));
-
     add(keyboard);
 	add(cursor);
 	add(message_);
-	add(mask_);
 
 	Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
 	Unicode::snprintf(message_buffer_, 5, "%s", list);
@@ -70,7 +66,6 @@ void CustomKeyboard::setKeyMappingList()
 {
     if (alphaKeys)
     {
-        //modeBtnTextArea.setTypedText(TypedText(T_ALPHAMODE));
         if (uppercaseKeys)
         {
             keyboard.setKeymappingList(&keyMappingListAlphaUpper);
@@ -82,7 +77,6 @@ void CustomKeyboard::setKeyMappingList()
     }
     else
     {
-        //modeBtnTextArea.setTypedText(TypedText(T_NUMMODE));
         if (uppercaseKeys)
         {
             keyboard.setKeymappingList(&keyMappingListNumUpper);
@@ -108,12 +102,9 @@ void CustomKeyboard::backspacePressedHandler()
         {
 			message_.setVisible(true);
             firstCharacterEntry = true;
-            //uppercaseKeys = true;
-            //setKeyMappingList();
         }
     }
 
-	//cursor.setPosition(cursor_ + shiftCursor[buffer[pos - 1]] * pos, 25, 10, 60);
 	moveCursor();
 }
 
@@ -142,8 +133,6 @@ void CustomKeyboard::modePressedHandler()
 
 void CustomKeyboard::keyPressedhandler(Unicode::UnicodeChar keyChar)
 {
-	//uint16_t pos = keyboard.getBufferPosition();
-
     // After the first keypress, the keyboard will shift to lowercase.
     if (firstCharacterEntry && keyChar != 0)
     {
@@ -153,7 +142,6 @@ void CustomKeyboard::keyPressedhandler(Unicode::UnicodeChar keyChar)
         setKeyMappingList();
     }
 
-	//cursor.setPosition(cursor_ + shiftCursor[buffer[pos - 1]] * pos, 25, 10, 60);
 	moveCursor();
 }
 
@@ -161,8 +149,6 @@ void CustomKeyboard::enterUserPressedHandler()
 {
 	HAL::getInstance()->blockCopy(bufferUser, buffer, 15 * sizeof(buffer) / BUFFER_SIZE);
 
-	//keyboard.setLayout(&layoutNumber);
-	//keyboard.setKeyListener(keyPressed);
 	keyboard.setLayout(&layoutNumberpad);
 	keyboard.setKeyListener(keyPressed);
 	keyboard.setPosition(0, 0, 640, 392);
@@ -181,12 +167,6 @@ void CustomKeyboard::enterUserPressedHandler()
 	firstCharacterEntry = true;
 }
 
-void CustomKeyboard::openMask()
-{
-	mask_.clearMoveAnimationEndedAction();
-	mask_.startMoveAnimation(-640, 0, 30, EasingEquations::linearEaseOut, EasingEquations::linearEaseIn);
-}
-
 void CustomKeyboard::enterPasswordPressedHandler()
 {	
 	HAL::getInstance()->blockCopy(bufferPassword, buffer, 15 * sizeof(buffer) / BUFFER_SIZE);
@@ -194,9 +174,6 @@ void CustomKeyboard::enterPasswordPressedHandler()
 	if (checkAccount()) {
 		if (checkAccountCallback && checkAccountCallback->isValid())
 		{
-			mask_.clearMoveAnimationEndedAction();
-			mask_.startMoveAnimation(0, 0, 60, EasingEquations::bounceEaseOut, EasingEquations::linearEaseIn);
-
 			checkAccountCallback->execute(true);
 		}
 	}

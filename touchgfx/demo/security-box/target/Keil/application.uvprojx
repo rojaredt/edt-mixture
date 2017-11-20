@@ -922,6 +922,11 @@
               <FilePath>../../gui/src/main_screen/mainview.cpp</FilePath>
             </File>
             <File>
+              <FileName>Mask.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../gui/src/common/mask.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Model.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../gui/src/model/model.cpp</FilePath>

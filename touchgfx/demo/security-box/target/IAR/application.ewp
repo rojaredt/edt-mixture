@@ -1159,6 +1159,9 @@
         <file>
           <name>$PROJ_DIR$\..\..\gui\src\common\FrontendApplication.cpp</name>
         </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\gui\src\common\Mask.cpp</name>
+        </file>
       </group>
       <group>
         <name>info_screen</name>

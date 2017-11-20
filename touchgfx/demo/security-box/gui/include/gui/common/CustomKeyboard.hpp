@@ -36,8 +36,6 @@ public:
 		checkAccountCallback = &callback;
 	}
 
-	void openMask();
-
 	bool checkAccount();
 
 	virtual void handleTickEvent();
@@ -63,8 +61,6 @@ private:
 	 * The cursor for keyboard.
 	 */
 	Box cursor;
-
-	MoveAnimator<Image> mask_;
 
 	TextAreaWithOneWildcard message_;
 	Unicode::UnicodeChar message_buffer_[10];

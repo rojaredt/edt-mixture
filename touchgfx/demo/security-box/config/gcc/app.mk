@@ -8,10 +8,10 @@
 ###############################################################################
 
 # Relative location of the TouchGFX framework from root of application
-touchgfx_path := touchgfx
+touchgfx_path := touchgfx/
 
 # Location of the TouchGFX Environment
-touchgfx_env := C:/TouchGFX/4.9.0/env
+touchgfx_env := C:/TouchGFX/4.9.1/env
 # Optional additional compiler flags
 user_cflags := -DUSE_BPP=24
 opaque_image_format := RGB888

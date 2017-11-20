@@ -4,8 +4,8 @@
   <PropertyGroup Label="UserMacros">
     <UseBPP>24</UseBPP>
     <RotateImage90>false</RotateImage90>
-    <TouchGFXReleasePath>..\..\touchgfx</TouchGFXReleasePath>
-    <TouchGFXEnvPath>C:\TouchGFX\4.9.0\env</TouchGFXEnvPath>
+    <TouchGFXReleasePath>..\..\touchgfx\</TouchGFXReleasePath>
+    <TouchGFXEnvPath>C:\TouchGFX\4.9.1\env</TouchGFXEnvPath>
     <AlphaDitherImage>yes</AlphaDitherImage>
     <DitherAlgorithm>2</DitherAlgorithm>
     <OpaqueImageOutputFormat>RGB888</OpaqueImageOutputFormat>
