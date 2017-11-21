@@ -15,6 +15,7 @@ Mask::Mask()
 	background_.setXY(-640, 0);
 	background_.setBitmap(Bitmap(BITMAP_KEYBOARD_MASK_ID));
 
+	message_title_.setPosition(-360, 165, 400, 60);
 	message_title_.setWildcard(message_title_buffer_);
 	message_title_.setColor(Color::getColorFrom24BitRGB(255, 255, 255));
 	message_title_.setAlpha(200);

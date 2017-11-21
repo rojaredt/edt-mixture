@@ -196,29 +196,6 @@
             "Moveable": false
           },
           {
-            "TextId": "SingleUseId38",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 156,
-              "Green": 156,
-              "Blue": 156
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textAreaTime",
-            "X": 31,
-            "Y": 445,
-            "Width": 207,
-            "Height": 30,
-            "Type": "TextArea",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Pressed": "lock.png",
             "Released": "unlocked.png",
             "Alpha": 255,
@@ -228,6 +205,29 @@
             "Width": 75,
             "Height": 75,
             "Type": "Button",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId38",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 122,
+              "Green": 122,
+              "Blue": 122
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 31,
+            "Y": 440,
+            "Width": 154,
+            "Height": 30,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -1624,6 +1624,10 @@
       {
         "TextEntryId": "SingleUseId37",
         "IsResource": false
+      },
+      {
+        "TextEntryId": "DigitalClock",
+        "IsResource": true
       },
       {
         "TextEntryId": "SingleUseId38",

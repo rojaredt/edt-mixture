@@ -997,6 +997,11 @@
               <FilePath>../../generated/fonts/src/font_robotocondensed_regular_56_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_VeraMono_24_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/fonts/src/font_veramono_24_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FontGetters.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/fonts/src/fontgetters.cpp</FilePath>
@@ -1035,6 +1040,11 @@
               <FileName>Kerning_RobotoCondensed_Regular_56_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/fonts/src/kerning_robotocondensed_regular_56_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_VeraMono_24_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/fonts/src/kerning_veramono_24_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>keyboard_background_640x392.cpp</FileName>
@@ -1145,6 +1155,11 @@
               <FileName>Table_RobotoCondensed_Regular_56_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/fonts/src/table_robotocondensed_regular_56_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_VeraMono_24_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../../generated/fonts/src/table_veramono_24_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Texts.cpp</FileName>

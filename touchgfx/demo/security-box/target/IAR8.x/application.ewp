@@ -1058,6 +1058,9 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_56_4bpp.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_VeraMono_24_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\FontGetters.cpp</name>
         </file>
         <file>
@@ -1070,6 +1073,9 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_56_4bpp.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_VeraMono_24_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_24_4bpp.cpp</name>
         </file>
         <file>
@@ -1077,6 +1083,9 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_56_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_VeraMono_24_4bpp.cpp</name>
         </file>
       </group>
       <group>

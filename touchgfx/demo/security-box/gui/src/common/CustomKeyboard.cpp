@@ -22,8 +22,6 @@ CustomKeyboard::CustomKeyboard() :
 	layoutNumberpad.callbackAreaArray[0].callback = &backspacePressed;
 	layoutNumberpad.callbackAreaArray[1].callback = &enterPasswordPressed;
 
-
-	//layout.callbackAreaArray[2].callback = &enterPasswordPressed;
     keyboard.setLayout(&layout);
     keyboard.setKeyListener(keyPressed);
     keyboard.setPosition(0, 0, 640, 392);
