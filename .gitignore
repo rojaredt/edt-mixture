@@ -1,6 +1,8 @@
 # TouchGFX Template
 *.log
 touchgfx/**/**/touchgfx/
+touchgfx/**/**/touchgfx_backup/
+touchgfx/**/**/*_backup.touchgfx
 
 ﻿# TouchGFX with Visual Studio and other
 **/**/**/build/
@@ -13,3 +15,4 @@ touchgfx/**/**/touchgfx/
 **/**/**/target/IAR8.x/settings
 **/**/**/target/IAR8.x/*.dep
 **/**/**/target/IAR8.x/*.ewt
+**/**/**/target/IAR8.x/Backup of *.ewp

@@ -1683,6 +1683,6 @@
       "FlashTargetCommand": "make -f target/gcc/Makefile -j10 flash"
     }
   },
-  "Version": "4.9.1",
+  "Version": "4.9.2",
   "CreatedBy": "4.9.0"
 }
