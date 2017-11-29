@@ -15,9 +15,9 @@ using namespace touchgfx;
  */
 #define configGUI_TASK_PRIORITY                 ( tskIDLE_PRIORITY + 3 )
 
-#define configGUI_TASK_STK_SIZE                 ( 950 )
+#define configGUI_TASK_STK_SIZE                 ( 1000 )
 
-#define configBACKEND_TASK_STK_SIZE             ( 400 )
+#define configBACKEND_TASK_STK_SIZE             ( 1000 )
 
 //#define CANVAS_BUFFER_SIZE (3600)
 
@@ -30,14 +30,6 @@ extern "C"
   } QueueMessage_t;
 }
 
-//typedef struct
-//{
-//  uint16_t id;  
-//  uint16_t data[50];
-//} QueueMessage_t;
-
-QueueMessage_t xMessageRX;
-
 QueueHandle_t xQueueRX;
 
 static void GUITask(void* params)
@@ -45,19 +37,17 @@ static void GUITask(void* params)
     touchgfx::HAL::getInstance()->taskEntry();
 }
 
-static void BackendTask( void* pvParameters )
-{
-  configASSERT( ( ( uint32_t ) pvParameters ) == 1 );
+static void BackendTask(void* pvParameters)
+{  
+  QueueMessage_t xMessageRX;
   
-  vTaskDelay(1000);
-  
-  while(1)
-  {        
+  for (;;)
+  {      
     taskENTER_CRITICAL();
     
     if (xQueueRX != 0)
-    {
-      if (xQueueReceive(xQueueRX, &xMessageRX, 0) == pdPASS)
+    {      
+      if (xQueueReceive(xQueueRX, &xMessageRX, ( TickType_t )0) == pdTRUE)
       {         
         if(xMessageRX.id == 1 && xMessageRX.data[0] == 0)
         {          
@@ -65,12 +55,10 @@ static void BackendTask( void* pvParameters )
         else if(xMessageRX.id == 1 && xMessageRX.data[0] == 100)
         {
         }
-        
-        xQueueReset(xQueueRX);
       }
-    }    
+    }
     
-    taskEXIT_CRITICAL();    
+    taskEXIT_CRITICAL();
   }
 }
 
@@ -78,8 +66,8 @@ int main(void)
 {
     hw_init();
     touchgfx_init();
-
-    xQueueRX = xQueueCreate(2, sizeof(QueueMessage_t));
+    
+    xQueueRX = xQueueCreate(8, sizeof(QueueMessage_t));
     
     xTaskCreate(GUITask,
                 (TASKCREATE_NAME_TYPE)"GUITask",
@@ -91,7 +79,7 @@ int main(void)
     xTaskCreate(BackendTask, 
                 (TASKCREATE_NAME_TYPE)"BackendTask",
                 configBACKEND_TASK_STK_SIZE,
-                ( void * ) 1,
+                NULL,
                 configGUI_TASK_PRIORITY - 1,
                 NULL);
     

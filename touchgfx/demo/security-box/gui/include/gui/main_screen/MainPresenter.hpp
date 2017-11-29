@@ -27,6 +27,7 @@ public:
 
     virtual ~MainPresenter() {};
 
+	void writeLoginRecord(uint16_t data[], uint16_t dataLength);
 private:
     MainPresenter();
 

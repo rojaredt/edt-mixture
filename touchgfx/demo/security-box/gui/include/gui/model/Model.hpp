@@ -1,6 +1,15 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include <cstdint>
+//#include "comm.h"
+#ifdef SIMULATOR
+#else
+#include "FreeRTOS.h"
+#include "queue.h"   
+#include "task.h"    
+#endif
+
 class ModelListener;
 
 /**
@@ -35,7 +44,17 @@ public:
      * the ModelListener interface.
      */
     void tick();
+
+	void pushData(uint16_t id, uint16_t data[], uint16_t dataLength);
 protected:
+	typedef struct
+	{
+		uint16_t id;
+		uint16_t data[50];
+	} QueueMessage_t;
+
+	QueueMessage_t xMessageRX;
+
     /**
      * Pointer to the currently active presenter.
      */

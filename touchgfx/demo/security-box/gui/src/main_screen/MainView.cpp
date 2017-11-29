@@ -82,6 +82,8 @@ void MainView::checkAccountCallbackHandler(bool valid)
 	}
 	else
 	{
+		uint16_t data[] = { 0xAA, 0xBB };
+		presenter->writeLoginRecord(data, 2);
 		mask_.startInvalidAnimation();
 	}
 }

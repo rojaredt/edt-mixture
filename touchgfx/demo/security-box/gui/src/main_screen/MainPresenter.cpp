@@ -15,3 +15,8 @@ void MainPresenter::deactivate()
 {
 
 }
+
+void MainPresenter::writeLoginRecord(uint16_t data[], uint16_t dataLength)
+{
+	model->pushData(2, data, dataLength);
+}
