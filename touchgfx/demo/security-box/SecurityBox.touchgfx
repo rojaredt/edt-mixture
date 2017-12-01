@@ -1106,7 +1106,7 @@
               }
             ],
             "HorizontalScrollEnabled": false,
-            "VerticalScrollEnabled": false,
+            "VerticalScrollEnabled": true,
             "ScrollbarsVisible": false,
             "ScrollbarsColor": {
               "Red": 0,

@@ -274,3 +274,12 @@ void CustomKeyboard::handleTickEvent()
 
 	tick++;
 }
+
+
+void CustomKeyboard::getBufferUser(uint16_t* user, uint16_t length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		user[i] = bufferUser[i];
+	}
+}

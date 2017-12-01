@@ -9,6 +9,18 @@ using namespace touchgfx;
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "stm32f7xx_hal.h"
+
+#define ADDR_FLASH_SECTOR_7     ((uint32_t)0x080C0000) /* Base address of Sector 7, 256 Kbytes */
+
+//#define FLASH_USER_START_ADDR   ADDR_FLASH_SECTOR_7   /* Start @ of user Flash area */
+//#define FLASH_USER_END_ADDR     (ADDR_FLASH_SECTOR_7_END-1)   /* End @ of user Flash area */
+
+//volatile uint32_t ulAddress = 0; //, data32 = 0; //, MemoryProgramStatus = 0;
+volatile uint32_t ulLogData[4 + 20 * 10] = {0};
+
+uint32_t SECTORError = 0;
+static FLASH_EraseInitTypeDef EraseInitStruct;
 
 /**
  * Define the FreeRTOS task priorities and stack sizes
@@ -47,14 +59,77 @@ static void BackendTask(void* pvParameters)
     
     if (xQueueRX != 0)
     {      
-      if (xQueueReceive(xQueueRX, &xMessageRX, ( TickType_t )0) == pdTRUE)
+      if (xQueueReceive(xQueueRX, &xMessageRX, (TickType_t)0) == pdTRUE)
       {         
-        if(xMessageRX.id == 1 && xMessageRX.data[0] == 0)
-        {          
-        }
-        else if(xMessageRX.id == 1 && xMessageRX.data[0] == 100)
+        if(xMessageRX.id == 2)
         {
-        }
+          volatile uint32_t ulData = 0;
+          volatile uint32_t ulAddress = 0;
+          volatile uint32_t ulAddressBase = ADDR_FLASH_SECTOR_7;
+          uint32_t ulLength = 4 + (20 * 8);
+          
+          HAL_FLASH_Unlock();
+                    
+          // Save data.
+          ulAddress = ulAddressBase;  
+          
+          for(int i = 0;i < ulLength; i++)
+          {
+            ulData = *(volatile uint32_t *)(ulAddress);
+            
+            if(i < 4)
+            {
+              ulLogData[i] = ulData;
+            }
+            else
+            {
+              ulLogData[i + 20] = ulData;
+            }
+            
+            ulAddress += 4;
+          }
+                    
+          for(int i = 0;i < 18;i++)
+          {
+            ulLogData[i + 4] = xMessageRX.data[i];
+          }
+          
+          // Erase.
+          EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+          EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+          EraseInitStruct.Sector        = FLASH_SECTOR_7;
+          EraseInitStruct.NbSectors     = 1;          
+          
+          if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
+          {    
+            /*
+               Error occurred while sector erase.
+               User can add here some code to deal with this error.
+               SECTORError will contain the faulty sector and then to know the code error on this sector,
+               user can call function 'HAL_FLASH_GetError()'
+            */
+          }
+          
+          // Restore.
+          ulAddress = ulAddressBase;
+        
+          for(int i = 0;i < ulLength; i++)
+          {            
+            ulData = ulLogData[i];
+            
+            if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, ulAddress, ulData) == HAL_OK)
+            {
+              ulAddress = ulAddress + 4;
+            }
+            else
+            {
+                    /* Error occurred while writing data in Flash memory.
+                       User can add here some code to deal with this error */
+            }
+          }      
+          
+          HAL_FLASH_Lock();
+        }        
       }
     }
     

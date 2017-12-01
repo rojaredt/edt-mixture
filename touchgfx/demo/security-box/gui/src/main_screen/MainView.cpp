@@ -81,9 +81,16 @@ void MainView::checkAccountCallbackHandler(bool valid)
 		buttonLock.invalidate();
 	}
 	else
-	{
-		uint16_t data[] = { 0xAA, 0xBB };
-		presenter->writeLoginRecord(data, 2);
+	{		
+		uint16_t record[18] = { 0x00 };
+		keyboard.getBufferUser(record, 12);
+		record[12] = 2018;
+		record[13] = 1;
+		record[14] = 2;
+		record[15] = hours_;
+		record[16] = minutes_;
+		record[17] = seconds_;
+		presenter->writeLoginRecord(record, 18);
 		mask_.startInvalidAnimation();
 	}
 }

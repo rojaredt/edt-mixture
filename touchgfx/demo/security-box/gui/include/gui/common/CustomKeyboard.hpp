@@ -40,6 +40,7 @@ public:
 
 	virtual void handleTickEvent();
 
+	void getBufferUser(uint16_t* user, uint16_t length);
 private:
 	static const uint16_t cursor_ = 28;
 
