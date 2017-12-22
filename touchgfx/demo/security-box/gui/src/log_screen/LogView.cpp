@@ -1,6 +1,8 @@
 #include <gui/log_screen/LogView.hpp>
 
 LogView::LogView()
+ :
+  firstTime(0)
 {
 
 }
@@ -33,9 +35,20 @@ void LogView::setupScreen()
 	textAreaMainTime6.setVisible(false);
 	textAreaMainTime7.setVisible(false);
 	textAreaMainTime8.setVisible(false);
+
+	//presenter->readLoginRecord();
 }
 
 void LogView::tearDownScreen()
 {
 
+}
+
+void LogView::handleTickEvent()
+{
+  if(firstTime == 0)
+  {
+    presenter->readLoginRecord();
+    firstTime = 1;
+  }
 }

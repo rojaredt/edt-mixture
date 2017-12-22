@@ -11,7 +11,9 @@ public:
     virtual ~LogView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void handleTickEvent();
 protected:
+    int firstTime;
 };
 
 #endif // LOG_VIEW_HPP

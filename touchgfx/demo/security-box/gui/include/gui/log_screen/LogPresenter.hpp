@@ -27,6 +27,7 @@ public:
 
     virtual ~LogPresenter() {};
 
+	void readLoginRecord();
 private:
     LogPresenter();
 

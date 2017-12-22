@@ -8,10 +8,15 @@ LogPresenter::LogPresenter(LogView& v)
 
 void LogPresenter::activate()
 {
-
+  //readLoginRecord();
 }
 
 void LogPresenter::deactivate()
 {
 
+}
+
+void LogPresenter::readLoginRecord()
+{
+	model->pushData(210);
 }

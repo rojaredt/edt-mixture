@@ -11,7 +11,7 @@
 touchgfx_path := touchgfx/
 
 # Location of the TouchGFX Environment
-touchgfx_env := C:/TouchGFX/4.9.2/env
+touchgfx_env := C:/TouchGFX/4.9.3/env
 # Optional additional compiler flags
 user_cflags := -DUSE_BPP=24
 opaque_image_format := RGB888

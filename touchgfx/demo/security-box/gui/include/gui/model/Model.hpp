@@ -45,6 +45,8 @@ public:
      */
     void tick();
 
+	void pushData(uint16_t id);
+
 	void pushData(uint16_t id, uint16_t data[], uint16_t dataLength);
 protected:
 	typedef struct
@@ -54,6 +56,7 @@ protected:
 	} QueueMessage_t;
 
 	QueueMessage_t xMessageRX;
+    QueueMessage_t xMessageTX;
 
     /**
      * Pointer to the currently active presenter.

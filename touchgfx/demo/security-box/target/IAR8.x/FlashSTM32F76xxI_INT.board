@@ -9,4 +9,5 @@
   <range>CODE 0x00200000 0x003FFFFF</range>
     <loader>$PROJ_DIR$\FlashSTM32F76xxI_TCM.flash</loader>
   </pass>
+  <ignore>CODE 0x90000000 0x93FFFFFF</ignore>
 </flash_board>

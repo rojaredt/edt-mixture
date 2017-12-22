@@ -247,6 +247,12 @@
     <Filter Include="Header Files\generated\gui_generated\containers">
       <UniqueIdentifier>FB4FDA9D-D43F-433D-BB02-318CEFC3BE26</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\app">
+      <UniqueIdentifier>{12340f01-dc1b-4311-9d52-b22e167dd983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{ea10627e-5d92-4151-a697-210f81923970}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -314,6 +320,9 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\common\Mask.cpp">
       <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\app\src\communication.cpp">
+      <Filter>Source Files\app</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -792,6 +801,9 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\Mask.hpp">
       <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\include\app\communication.hpp">
+      <Filter>Header Files\app</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

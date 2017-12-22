@@ -27,6 +27,15 @@ public:
     {
         model = m;
     }
+
+	//typedef struct
+	//{
+	//	uint16_t id;
+	//	uint16_t data[50];
+	//} QueueMessage_t;
+
+//	virtual void getLoginRecord(QueueMessage_t* record);
+
 protected:
     Model* model;
 };
