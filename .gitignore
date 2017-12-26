@@ -9,9 +9,11 @@ touchgfx/**/**/*_backup.touchgfx
 **/**/**/generated/
 **/**/**/simulator/msvs/.vs/
 **/**/**/simulator/msvs/screenshots/
+.vs/
 
 # TouchGFX with IAR
 **/**/**/target/IAR8.x/Debug
+**/**/**/target/IAR8.x/Dbg_Ex_SPI
 **/**/**/target/IAR8.x/settings
 **/**/**/target/IAR8.x/*.dep
 **/**/**/target/IAR8.x/*.ewt

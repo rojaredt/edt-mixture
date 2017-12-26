@@ -27,7 +27,10 @@ public:
 
     virtual ~LogPresenter() {};
 
-	void readLoginRecord();
+    virtual void handleLLMessage(uint16_t *data);
+    
+    void readLoginRecord();       
+    
 private:
     LogPresenter();
 

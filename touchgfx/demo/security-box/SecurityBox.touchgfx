@@ -527,10 +527,14 @@
                     "Alpha": 255,
                     "AutoSize": true,
                     "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": false,
+                      "BufferSize": 0
+                    },
                     "Name": "textAreaMainName1",
                     "X": 108,
                     "Y": 120,
-                    "Width": 55,
+                    "Width": 0,
                     "Height": 32,
                     "Type": "TextArea",
                     "Visible": true,
@@ -550,10 +554,14 @@
                     "Alpha": 255,
                     "AutoSize": true,
                     "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": false,
+                      "BufferSize": 0
+                    },
                     "Name": "textAreaMainTime1",
                     "X": 373,
                     "Y": 120,
-                    "Width": 194,
+                    "Width": 0,
                     "Height": 32,
                     "Type": "TextArea",
                     "Visible": true,

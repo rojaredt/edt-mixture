@@ -2,21 +2,26 @@
 #include <gui/log_screen/LogPresenter.hpp>
 
 LogPresenter::LogPresenter(LogView& v)
-    : view(v)
+: view(v)
 {
 }
 
 void LogPresenter::activate()
 {
-  //readLoginRecord();
+  
 }
 
 void LogPresenter::deactivate()
 {
-
+  
 }
 
 void LogPresenter::readLoginRecord()
 {
-	model->pushData(210);
+  model->pushData(210);
+}
+
+void LogPresenter::handleLLMessage(uint16_t *data)
+{
+  view.showLogList(data);
 }

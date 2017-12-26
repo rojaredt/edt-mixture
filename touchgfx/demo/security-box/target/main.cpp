@@ -62,8 +62,8 @@ static void BackendTask(void* pvParameters)
   QueueMessageR_t xMessageTX;
   
   for (;;)
-  {      
-    
+  {         
+    taskENTER_CRITICAL();
     
     if (xQueueRX != 0)
     {      
@@ -141,8 +141,6 @@ static void BackendTask(void* pvParameters)
           }      
           
           HAL_FLASH_Lock();
-          
-          //taskEXIT_CRITICAL();
         } 
         else if(xMessageRX.id == 210)
         {
@@ -167,18 +165,15 @@ static void BackendTask(void* pvParameters)
               
               ulAddress += 4;
             }
-//            
-//            HAL_FLASH_Lock();
             
-            //taskEXIT_CRITICAL();
+            HAL_FLASH_Lock();
             
-            //xQueueSend(xQueueTX, ( void * )&xMessageTX, 0); 
+            xQueueSend(xQueueTX, ( void * )&xMessageTX, 0); 
           }
         }
       }
-      
-        //taskEXIT_CRITICAL();
     }
+    taskEXIT_CRITICAL();
   }
 }
 
@@ -188,7 +183,7 @@ int main(void)
     touchgfx_init();
     
     xQueueRX = xQueueCreate(1, sizeof(QueueMessage_t));
-    xQueueTX = xQueueCreate(1, sizeof(QueueMessage_t));
+    xQueueTX = xQueueCreate(1, sizeof(QueueMessageR_t));
     
     xTaskCreate(GUITask,
                 (TASKCREATE_NAME_TYPE)"GUITask",
