@@ -23,8 +23,8 @@ uint32_t SECTORError = 0;
 static FLASH_EraseInitTypeDef EraseInitStruct;
 
 /**
- * Define the FreeRTOS task priorities and stack sizes
- */
+* Define the FreeRTOS task priorities and stack sizes
+*/
 #define configGUI_TASK_PRIORITY                 ( tskIDLE_PRIORITY + 3 )
 
 #define configGUI_TASK_STK_SIZE                 ( 2048 )
@@ -41,7 +41,7 @@ extern "C"
     uint16_t data[50];
   } QueueMessage_t;
   
-    typedef struct
+  typedef struct
   {
     uint16_t id;  
     uint16_t data[200];
@@ -53,7 +53,7 @@ QueueHandle_t xQueueTX;
 
 static void GUITask(void* params)
 {
-    touchgfx::HAL::getInstance()->taskEntry();
+  touchgfx::HAL::getInstance()->taskEntry();
 }
 
 static void BackendTask(void* pvParameters)
@@ -179,27 +179,27 @@ static void BackendTask(void* pvParameters)
 
 int main(void)
 {
-    hw_init();
-    touchgfx_init();
-    
-    xQueueRX = xQueueCreate(1, sizeof(QueueMessage_t));
-    xQueueTX = xQueueCreate(1, sizeof(QueueMessageR_t));
-    
-    xTaskCreate(GUITask,
-                (TASKCREATE_NAME_TYPE)"GUITask",
-                configGUI_TASK_STK_SIZE,
-                NULL,
-                configGUI_TASK_PRIORITY,
-                NULL);
-
-    xTaskCreate(BackendTask, 
-                (TASKCREATE_NAME_TYPE)"BackendTask",
-                configBACKEND_TASK_STK_SIZE,
-                NULL,
-                configGUI_TASK_PRIORITY - 1,
-                NULL);
-    
-    vTaskStartScheduler();
-
-    for (;;);
+  hw_init();
+  touchgfx_init();
+  
+  xQueueRX = xQueueCreate(1, sizeof(QueueMessage_t));
+  xQueueTX = xQueueCreate(1, sizeof(QueueMessageR_t));
+  
+  xTaskCreate(GUITask,
+              (TASKCREATE_NAME_TYPE)"GUITask",
+              configGUI_TASK_STK_SIZE,
+              NULL,
+              configGUI_TASK_PRIORITY,
+              NULL);
+  
+  xTaskCreate(BackendTask, 
+              (TASKCREATE_NAME_TYPE)"BackendTask",
+              configBACKEND_TASK_STK_SIZE,
+              NULL,
+              configGUI_TASK_PRIORITY - 1,
+              NULL);
+  
+  vTaskStartScheduler();
+  
+  for (;;);
 }
