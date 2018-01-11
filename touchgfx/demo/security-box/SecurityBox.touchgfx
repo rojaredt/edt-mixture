@@ -23,7 +23,7 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "bg_800x480.png",
+            "RelativeFilename": "main_backgraound.png",
             "Alpha": 255,
             "Name": "image6",
             "X": 0,
@@ -1740,7 +1740,7 @@
         }
       ],
       "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
-      "PostGenerateCommand": "touchgfx update_project --project-file=target/IAR/application.ewp && touchgfx update_project --project-file=target/IAR8.x/application.ewp && touchgfx update_project && touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+      "PostGenerateCommand": "touchgfx update_project --project-file=target/IAR8.x/application.ewp && touchgfx update_project && touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
       "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
       "RunSimulatorCommand": "build\\bin\\simulator.exe",
       "CompileTargetCommand": "make -f target/gcc/Makefile -j10",
@@ -1748,5 +1748,5 @@
     }
   },
   "Version": "4.9.3",
-  "CreatedBy": "4.9.0"
+  "CreatedBy": "4.9.3"
 }

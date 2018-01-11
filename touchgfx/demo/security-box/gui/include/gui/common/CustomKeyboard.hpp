@@ -42,7 +42,8 @@ public:
   
   void getBufferUser(uint16_t* user, uint16_t length);
 private:
-  static const uint16_t cursor_ = 28;
+  static const uint16_t cursor_begin_x_ = 28;
+  static const uint16_t cursor_begin_y_ = 40;
   
   /*
   * The size of the buffer that is used by the keyboard.
@@ -61,7 +62,7 @@ private:
   /*
   * The cursor for keyboard.
   */
-  Box cursor;
+  Box cursor_;
   
   TextAreaWithOneWildcard message_;
   Unicode::UnicodeChar message_buffer_[10];
@@ -77,7 +78,7 @@ private:
   /**
   * Used to display text on top of the button for changing keyboard mode.
   */
-  TextArea modeBtnTextArea;
+  //TextArea modeBtnTextArea;
   
   /**
   * Callback for the capslock button.

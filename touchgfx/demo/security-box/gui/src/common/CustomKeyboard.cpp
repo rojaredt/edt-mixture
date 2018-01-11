@@ -5,7 +5,7 @@ CustomKeyboard::CustomKeyboard() :
   tick(0),
   keyboardNumberpad_(false),
   keyboard(),
-  modeBtnTextArea(),
+//  modeBtnTextArea(),
   capslockPressed(this, &CustomKeyboard::capslockPressedHandler),
   backspacePressed(this, &CustomKeyboard::backspacePressedHandler),
   modePressed(this, &CustomKeyboard::modePressedHandler),
@@ -24,7 +24,7 @@ CustomKeyboard::CustomKeyboard() :
     
     keyboard.setLayout(&layout);
     keyboard.setKeyListener(keyPressed);
-    keyboard.setPosition(0, 0, 640, 392);
+    keyboard.setPosition(0, 0, 662, 412);
     keyboard.setTextIndentation();
     //Allocate the buffer associated with keyboard.
     memset(buffer, 0, sizeof(buffer));
@@ -33,16 +33,16 @@ CustomKeyboard::CustomKeyboard() :
     uppercaseKeys = true;
     firstCharacterEntry = true;
     
-    modeBtnTextArea.setPosition(5, 196, 56, 40);
-    modeBtnTextArea.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
+   // modeBtnTextArea.setPosition(5, 196, 56, 40);
+   // modeBtnTextArea.setColor(Color::getColorFrom24BitRGB(0x00, 0xFF, 0xFF));
     
     setKeyMappingList();
     
-    cursor.setPosition(cursor_, 25, 10, 60);
-    cursor.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    cursor.setAlpha(50);
+    cursor_.setPosition(cursor_begin_x_, cursor_begin_y_, 10, 60);
+    cursor_.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 145, 45));
+    cursor_.setAlpha(255);
     
-    message_.setPosition(cursor_ + 20, 20, 410, 60);
+    message_.setPosition(cursor_begin_x_ + 20, 20, 410, 60);
     message_.setWildcard(message_buffer_);
     message_.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     message_.setAlpha(100);
@@ -50,7 +50,7 @@ CustomKeyboard::CustomKeyboard() :
     message_.setTypedText(TypedText(T_ENTEREDTEXT));
     
     add(keyboard);
-    add(cursor);
+    add(cursor_);
     add(message_);
     
     Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
@@ -211,14 +211,14 @@ CustomKeyboard::CustomKeyboard() :
   void CustomKeyboard::moveCursor() 
   {
     uint16_t pos = keyboard.getBufferPosition();
-    uint16_t cursorPosition = cursor_;
+    uint16_t cursorPosition = cursor_begin_x_;
     
     for (int i = 0; i < pos; i++)
     {
       cursorPosition += shiftCursor[buffer[i]];
     }
     
-    cursor.setPosition(cursorPosition, 25, 10, 60);
+    cursor_.setPosition(cursorPosition, cursor_begin_y_, 6, 60);
   }
   
   bool CustomKeyboard::checkAccount()
@@ -260,16 +260,16 @@ CustomKeyboard::CustomKeyboard() :
   {
     if ((tick % 30) == 0)
     {
-      if (cursor.getAlpha() == 50) 
+      if (cursor_.getAlpha() == 50) 
       {
-        cursor.setAlpha(10);
+        cursor_.setAlpha(10);
       }
       else
       {
-        cursor.setAlpha(50);
+        cursor_.setAlpha(50);
       }
       
-      cursor.invalidate();
+      cursor_.invalidate();
     }
     
     tick++;

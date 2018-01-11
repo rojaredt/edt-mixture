@@ -2087,13 +2087,13 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\ApplicationFontProvider.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_Roboto_Medium_40_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_Roboto_Medium_56_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_24_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_40_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_56_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_VeraMono_24_4bpp.cpp</name>
@@ -2102,25 +2102,25 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\FontGetters.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_Roboto_Medium_40_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_Roboto_Medium_56_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_24_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_40_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_56_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_VeraMono_24_4bpp.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_Roboto_Medium_40_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_Roboto_Medium_56_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_24_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_40_4bpp.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_56_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_VeraMono_24_4bpp.cpp</name>
@@ -2171,9 +2171,6 @@
           </file>
         </group>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\bg_800x480.cpp</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\bg_info.cpp</name>
         </file>
         <file>
@@ -2183,22 +2180,25 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\edtlogo_large.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\english_keyboard_background.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\info_p.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\info_r.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_background_640x392.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_delete_press.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_delete_highlighted_112x80.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_enter_press.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_highlight_english.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_highlighted_52x80.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_key_shift_highlighted_112x80.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_mask.cpp</name>
@@ -2217,6 +2217,9 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\log_r.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\main_backgraound.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\return_p.cpp</name>

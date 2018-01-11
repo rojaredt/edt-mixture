@@ -273,9 +273,6 @@
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
       <Filter>Source Files\gui\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
-      <Filter>Source Files\generated\gui_generated\common</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\model\Model.cpp">
       <Filter>Source Files\gui\model</Filter>
     </ClCompile>
@@ -288,17 +285,11 @@
     <ClCompile Include="..\..\gui\src\main_screen\MainView.cpp">
       <Filter>Source Files\gui\main_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\main_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\log_screen\LogPresenter.cpp">
       <Filter>Source Files\gui\log_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\log_screen\LogView.cpp">
       <Filter>Source Files\gui\log_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\log_screen\LogViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\log_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\settings_screen\SettingsPresenter.cpp">
       <Filter>Source Files\gui\settings_screen</Filter>
@@ -306,23 +297,29 @@
     <ClCompile Include="..\..\gui\src\settings_screen\SettingsView.cpp">
       <Filter>Source Files\gui\settings_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\settings_screen\SettingsViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\settings_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\info_screen\InfoPresenter.cpp">
       <Filter>Source Files\gui\info_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\info_screen\InfoView.cpp">
       <Filter>Source Files\gui\info_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\info_screen\InfoViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\info_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\common\Mask.cpp">
       <Filter>Source Files\gui\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\app\src\communication.cpp">
-      <Filter>Source Files\app</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\info_screen\InfoViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\info_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\log_screen\LogViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\log_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\main_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settings_screen\SettingsViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settings_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -736,23 +733,14 @@
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
       <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
       <Filter>Header Files\gui\model</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
       <Filter>Header Files\gui\model</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
       <Filter>Header Files\gui\common</Filter>
@@ -769,17 +757,11 @@
     <ClInclude Include="..\..\gui\include\gui\main_screen\MainView.hpp">
       <Filter>Header Files\gui\main_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\main_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\log_screen\LogPresenter.hpp">
       <Filter>Header Files\gui\log_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\log_screen\LogView.hpp">
       <Filter>Header Files\gui\log_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\log_screen\LogViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\log_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\settings_screen\SettingsPresenter.hpp">
       <Filter>Header Files\gui\settings_screen</Filter>
@@ -787,23 +769,38 @@
     <ClInclude Include="..\..\gui\include\gui\settings_screen\SettingsView.hpp">
       <Filter>Header Files\gui\settings_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settings_screen\SettingsViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\settings_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\info_screen\InfoPresenter.hpp">
       <Filter>Header Files\gui\info_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\info_screen\InfoView.hpp">
       <Filter>Header Files\gui\info_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\info_screen\InfoViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\info_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\Mask.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\app\include\app\communication.hpp">
       <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\info_screen\InfoViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\info_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\log_screen\LogViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\log_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\main_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settings_screen\SettingsViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settings_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

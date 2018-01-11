@@ -15,25 +15,24 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2.cpp"/>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2_icon.cpp"/>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp"/>
-    <ClCompile Include="..\..\app\src\communication.cpp"/>
     <ClCompile Include="..\main.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp"/>
     <ClCompile Include="..\..\gui\src\main_screen\MainPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\main_screen\MainView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\log_screen\LogPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\log_screen\LogView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\log_screen\LogViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\settings_screen\SettingsPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settings_screen\SettingsView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\settings_screen\SettingsViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\info_screen\InfoPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\info_screen\InfoView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\info_screen\InfoViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\Mask.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\info_screen\InfoViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\log_screen\LogViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\settings_screen\SettingsViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx"/>
@@ -175,28 +174,28 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp"/>
     <ClInclude Include="..\..\app\include\app\communication.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\main_screen\MainPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\main_screen\MainView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\log_screen\LogPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\log_screen\LogView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\log_screen\LogViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settings_screen\SettingsPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settings_screen\SettingsView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settings_screen\SettingsViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\info_screen\InfoPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\info_screen\InfoView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\info_screen\InfoViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Mask.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\info_screen\InfoViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\log_screen\LogViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settings_screen\SettingsViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\touchgfx.rc"/>

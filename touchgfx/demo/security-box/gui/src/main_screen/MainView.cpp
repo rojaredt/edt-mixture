@@ -8,7 +8,7 @@ MainView::MainView()
 	minutes_(16),
 	seconds_(32)
 {
-	keyboard.setPosition(32, 44, 640, 392);
+	keyboard.setPosition(23, 35, 662, 412);
 	keyboard.setCheckAccountAction(checkAccountCallback);
     add(keyboard);
 
