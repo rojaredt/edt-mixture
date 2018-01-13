@@ -17,7 +17,7 @@ MainView::MainView()
 
 	digitalClock_.setPosition(185, 440, 150, 30);
 	digitalClock_.setTypedText(TypedText(T_DIGITALCLOCK));
-	digitalClock_.setColor(Color::getColorFrom24BitRGB(0x7A, 0x7A, 0x7A));
+	digitalClock_.setColor(Color::getColorFrom24BitRGB(243, 164, 39));
 	digitalClock_.setDisplayMode(DigitalClock::DISPLAY_24_HOUR);
 	digitalClock_.displayLeadingZeroForHourIndicator(true);
 	add(digitalClock_);

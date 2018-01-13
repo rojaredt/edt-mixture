@@ -43,11 +43,11 @@
               "Green": 196,
               "Blue": 196
             },
-            "Alpha": 58,
+            "Alpha": 40,
             "Name": "box1",
-            "X": 704,
+            "X": 708,
             "Y": 192,
-            "Width": 96,
+            "Width": 92,
             "Height": 96,
             "Type": "Box",
             "Visible": true,
@@ -62,11 +62,11 @@
               "Green": 140,
               "Blue": 140
             },
-            "Alpha": 60,
+            "Alpha": 30,
             "Name": "box1_1",
-            "X": 704,
+            "X": 708,
             "Y": 288,
-            "Width": 96,
+            "Width": 92,
             "Height": 96,
             "Type": "Box",
             "Visible": true,
@@ -108,8 +108,8 @@
             "Name": "textAreaMainTitle",
             "X": 31,
             "Y": 8,
-            "Width": 117,
-            "Height": 32,
+            "Width": 129,
+            "Height": 29,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -118,7 +118,7 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "lock.png",
+            "RelativeFilename": "lock_on.png",
             "Alpha": 255,
             "Name": "imageLock",
             "X": 715,
@@ -133,7 +133,7 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "wi_fi.png",
+            "RelativeFilename": "wifi_on.png",
             "Alpha": 255,
             "Name": "imageConnect",
             "X": 715,
@@ -148,8 +148,8 @@
             "Moveable": false
           },
           {
-            "Pressed": "log_p.png",
-            "Released": "log_r.png",
+            "Pressed": "log_press.png",
+            "Released": "log_rlease.png",
             "Alpha": 255,
             "Name": "buttonLog",
             "X": 715,
@@ -164,11 +164,11 @@
             "Moveable": false
           },
           {
-            "Pressed": "settings_p.png",
-            "Released": "settings_r.png",
+            "Pressed": "settings_press.png",
+            "Released": "setting_release.png",
             "Alpha": 255,
             "Name": "buttonSettings",
-            "X": 715,
+            "X": 717,
             "Y": 299,
             "Width": 75,
             "Height": 75,
@@ -180,11 +180,11 @@
             "Moveable": false
           },
           {
-            "Pressed": "info_p.png",
-            "Released": "info_r.png",
+            "Pressed": "info_press.png",
+            "Released": "info_release.png",
             "Alpha": 255,
             "Name": "buttonInfo",
-            "X": 715,
+            "X": 717,
             "Y": 395,
             "Width": 75,
             "Height": 75,
@@ -196,8 +196,8 @@
             "Moveable": false
           },
           {
-            "Pressed": "lock.png",
-            "Released": "unlocked.png",
+            "Pressed": "lock_on.png",
+            "Released": "locked_off.png",
             "Alpha": 255,
             "Name": "buttonLock",
             "X": 715,
@@ -215,9 +215,9 @@
             "TextId": "SingleUseId38",
             "TextRotation": "0",
             "Color": {
-              "Red": 122,
-              "Green": 122,
-              "Blue": 122
+              "Red": 243,
+              "Green": 164,
+              "Blue": 39
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -226,8 +226,27 @@
             "X": 31,
             "Y": 440,
             "Width": 144,
-            "Height": 28,
+            "Height": 29,
             "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 140,
+              "Green": 140,
+              "Blue": 140
+            },
+            "Alpha": 30,
+            "Name": "box1_1_2",
+            "X": 708,
+            "Y": 96,
+            "Width": 92,
+            "Height": 96,
+            "Type": "Box",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -1543,14 +1562,6 @@
     "TextEntries": [
       {
         "TextEntryId": "EnteredText",
-        "IsResource": true
-      },
-      {
-        "TextEntryId": "NumMode",
-        "IsResource": true
-      },
-      {
-        "TextEntryId": "AlphaMode",
         "IsResource": true
       },
       {

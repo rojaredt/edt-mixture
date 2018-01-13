@@ -33,7 +33,7 @@ public:
   
   void setCheckAccountAction(GenericCallback<const bool>& callback)
   {
-    checkAccountCallback = &callback;
+    checkAccountCallback_ = &callback;
   }
   
   bool checkAccount();
@@ -44,7 +44,8 @@ public:
 private:
   static const uint16_t cursor_begin_x_ = 28;
   static const uint16_t cursor_begin_y_ = 40;
-  
+  static const uint16_t backgraound_width_  = 662;
+  static const uint16_t backgraound_height_ = 412;
   /*
   * The size of the buffer that is used by the keyboard.
   * The size determines how much text the keyboard can contain in its textfield.
@@ -57,7 +58,7 @@ private:
   /**
   * The keyboard which this CustomKeyboard wraps.
   */
-  Keyboard keyboard;
+  Keyboard keyboard_;
   
   /*
   * The cursor for keyboard.
@@ -70,10 +71,10 @@ private:
   /**
   * The buffer used by the keyboard for text input.
   */
-  Unicode::UnicodeChar buffer[BUFFER_SIZE];
+  Unicode::UnicodeChar buffer_[BUFFER_SIZE];
   
-  Unicode::UnicodeChar bufferUser[BUFFER_SIZE];
-  Unicode::UnicodeChar bufferPassword[BUFFER_SIZE];
+  Unicode::UnicodeChar bufferUser_[BUFFER_SIZE];
+  Unicode::UnicodeChar bufferPassword_[BUFFER_SIZE];
   
   /**
   * Used to display text on top of the button for changing keyboard mode.
@@ -83,42 +84,42 @@ private:
   /**
   * Callback for the capslock button.
   */
-  Callback<CustomKeyboard> capslockPressed;
+  Callback<CustomKeyboard> capslockPressed_;
   
   /**
   * Callback for the backspace button.
   */
-  Callback<CustomKeyboard> backspacePressed;
+  Callback<CustomKeyboard> backspacePressed_;
   
   /**
   * Callback for the keyboard mode button.
   */
-  Callback<CustomKeyboard> modePressed;
+  Callback<CustomKeyboard> modePressed_;
   
-  Callback<CustomKeyboard> enterUserPressed;
-  Callback<CustomKeyboard> enterPasswordPressed;
+  Callback<CustomKeyboard> enterUserPressed_;
+  Callback<CustomKeyboard> enterPasswordPressed_;
   
-  GenericCallback<const bool>* checkAccountCallback;
+  GenericCallback<const bool>* checkAccountCallback_;
   
   /**
   * Callback for when keys are pressed on the keyboard.
   */
-  Callback<CustomKeyboard, Unicode::UnicodeChar> keyPressed;
+  Callback<CustomKeyboard, Unicode::UnicodeChar> keyPressed_;
   
   /**
   * True if the keyboard should show alpha keys, false for numeric.
   */
-  bool alphaKeys;
+  bool alphaKeys_;
   
   /**
   * True if the keyboard should show upper-case keys.
   */
-  bool uppercaseKeys;
+  bool uppercaseKeys_;
   
   /**
   * True if the input position in the text field, and hence the buffer, is at the beginning.
   */
-  bool firstCharacterEntry;
+  bool firstCharacterEntry_;
   
   /*
   * Sets the correct key mappings of the keyboard according to alpha/numeric and upper-case/lower-case.

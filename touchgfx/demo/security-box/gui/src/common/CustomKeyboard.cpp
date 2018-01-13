@@ -4,52 +4,48 @@
 CustomKeyboard::CustomKeyboard() : 
   tick(0),
   keyboardNumberpad_(false),
-  keyboard(),
-//  modeBtnTextArea(),
-  capslockPressed(this, &CustomKeyboard::capslockPressedHandler),
-  backspacePressed(this, &CustomKeyboard::backspacePressedHandler),
-  modePressed(this, &CustomKeyboard::modePressedHandler),
-  enterUserPressed(this, &CustomKeyboard::enterUserPressedHandler),
-  enterPasswordPressed(this, &CustomKeyboard::enterPasswordPressedHandler),
-  keyPressed(this, &CustomKeyboard::keyPressedhandler),
-  alphaKeys(true),
-  uppercaseKeys(false),
-  firstCharacterEntry(false)
+  keyboard_(),
+  capslockPressed_(this, &CustomKeyboard::capslockPressedHandler),
+  backspacePressed_(this, &CustomKeyboard::backspacePressedHandler),
+  modePressed_(this, &CustomKeyboard::modePressedHandler),
+  enterUserPressed_(this, &CustomKeyboard::enterUserPressedHandler),
+  enterPasswordPressed_(this, &CustomKeyboard::enterPasswordPressedHandler),
+  keyPressed_(this, &CustomKeyboard::keyPressedhandler),
+  alphaKeys_(true),
+  uppercaseKeys_(false),
+  firstCharacterEntry_(false)
   {
     //Set the callbacks for the callback areas of the keyboard and set its layout.
-    layout.callbackAreaArray[0].callback = &backspacePressed;
-    layout.callbackAreaArray[1].callback = &enterUserPressed;
-    layoutNumberpad.callbackAreaArray[0].callback = &backspacePressed;
-    layoutNumberpad.callbackAreaArray[1].callback = &enterPasswordPressed;
+    layoutEnglish.callbackAreaArray[0].callback = &backspacePressed_;
+    layoutEnglish.callbackAreaArray[1].callback = &enterUserPressed_;
+    layoutNumberpad.callbackAreaArray[0].callback = &backspacePressed_;
+    layoutNumberpad.callbackAreaArray[1].callback = &enterPasswordPressed_;
     
-    keyboard.setLayout(&layout);
-    keyboard.setKeyListener(keyPressed);
-    keyboard.setPosition(0, 0, 662, 412);
-    keyboard.setTextIndentation();
+    keyboard_.setLayout(&layoutEnglish);
+    keyboard_.setKeyListener(keyPressed_);
+    keyboard_.setPosition(0, 0, backgraound_width_, backgraound_height_);
+    keyboard_.setTextIndentation();
     //Allocate the buffer associated with keyboard.
-    memset(buffer, 0, sizeof(buffer));
-    keyboard.setBuffer(buffer, BUFFER_SIZE);
+    memset(buffer_, 0, sizeof(buffer_));
+    keyboard_.setBuffer(buffer_, BUFFER_SIZE);
     
-    uppercaseKeys = true;
-    firstCharacterEntry = true;
-    
-   // modeBtnTextArea.setPosition(5, 196, 56, 40);
-   // modeBtnTextArea.setColor(Color::getColorFrom24BitRGB(0x00, 0xFF, 0xFF));
-    
+    uppercaseKeys_ = true;
+    firstCharacterEntry_ = true;
+       
     setKeyMappingList();
     
     cursor_.setPosition(cursor_begin_x_, cursor_begin_y_, 10, 60);
     cursor_.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 145, 45));
     cursor_.setAlpha(255);
     
-    message_.setPosition(cursor_begin_x_ + 20, 20, 410, 60);
+    message_.setPosition(cursor_begin_x_ + 20, cursor_begin_y_, 410, 60);
     message_.setWildcard(message_buffer_);
     message_.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     message_.setAlpha(100);
     message_.setLinespacing(0);
     message_.setTypedText(TypedText(T_ENTEREDTEXT));
     
-    add(keyboard);
+    add(keyboard_);
     add(cursor_);
     add(message_);
     
@@ -62,44 +58,44 @@ CustomKeyboard::CustomKeyboard() :
   
   void CustomKeyboard::setKeyMappingList()
   {
-    if (alphaKeys)
+    if (alphaKeys_)
     {
-      if (uppercaseKeys)
+      if (uppercaseKeys_)
       {
-        keyboard.setKeymappingList(&keyMappingListAlphaUpper);
+        keyboard_.setKeymappingList(&keyMappingListAlphaUpper);
       }
       else
       {
-        keyboard.setKeymappingList(&keyMappingListAlphaLower);
+        keyboard_.setKeymappingList(&keyMappingListAlphaLower);
       }
     }
     else
     {
-      if (uppercaseKeys)
+      if (uppercaseKeys_)
       {
-        keyboard.setKeymappingList(&keyMappingListNumUpper);
+        keyboard_.setKeymappingList(&keyMappingListNumUpper);
       }
       else
       {
-        keyboard.setKeymappingList(&keyMappingListNumLower);
+        keyboard_.setKeymappingList(&keyMappingListNumLower);
       }
     }
   }
   
   void CustomKeyboard::backspacePressedHandler()
   {
-    uint16_t pos = keyboard.getBufferPosition();
+    uint16_t pos = keyboard_.getBufferPosition();
     if (pos > 0)
     {
       //Delete the previous entry in the buffer and decrement the position.
-      buffer[pos - 1] = 0;
-      keyboard.setBufferPosition(pos - 1);
+      buffer_[pos - 1] = 0;
+      keyboard_.setBufferPosition(pos - 1);
       
       //Change keymappings if we have reached the first position.
       if (1 == pos)
       {
         message_.setVisible(true);
-        firstCharacterEntry = true;
+        firstCharacterEntry_ = true;
       }
     }
     
@@ -108,23 +104,23 @@ CustomKeyboard::CustomKeyboard() :
   
   void CustomKeyboard::capslockPressedHandler()
   {
-    uppercaseKeys = !uppercaseKeys;
+    uppercaseKeys_ = !uppercaseKeys_;
     setKeyMappingList();
   }
   
   void CustomKeyboard::modePressedHandler()
   {
-    alphaKeys = !alphaKeys;
+    alphaKeys_ = !alphaKeys_;
     
     // if we have changed back to alpha and still has no chars in the buffer,
     // we show upper case letters.
-    if (firstCharacterEntry && alphaKeys)
+    if (firstCharacterEntry_ && alphaKeys_)
     {
-      uppercaseKeys = true;
+      uppercaseKeys_ = true;
     }
     else
     {
-      uppercaseKeys = false;
+      uppercaseKeys_ = false;
     }
     setKeyMappingList();
   }
@@ -132,10 +128,10 @@ CustomKeyboard::CustomKeyboard() :
   void CustomKeyboard::keyPressedhandler(Unicode::UnicodeChar keyChar)
   {
     // After the first keypress, the keyboard will shift to lowercase.
-    if (firstCharacterEntry && keyChar != 0)
+    if (firstCharacterEntry_ && keyChar != 0)
     {
       message_.setVisible(false);
-      firstCharacterEntry = false;
+      firstCharacterEntry_ = false;
       //uppercaseKeys = false;
       setKeyMappingList();
     }
@@ -145,15 +141,15 @@ CustomKeyboard::CustomKeyboard() :
   
   void CustomKeyboard::enterUserPressedHandler()
   {
-    HAL::getInstance()->blockCopy(bufferUser, buffer, 15 * sizeof(buffer) / BUFFER_SIZE);
+    HAL::getInstance()->blockCopy(bufferUser_, buffer_, 15 * sizeof(buffer_) / BUFFER_SIZE);
     
-    keyboard.setLayout(&layoutNumberpad);
-    keyboard.setKeyListener(keyPressed);
-    keyboard.setPosition(0, 0, 640, 392);
-    keyboard.setTextIndentation();
+    keyboard_.setLayout(&layoutNumberpad);
+    keyboard_.setKeyListener(keyPressed_);
+    keyboard_.setPosition(0, 0, backgraound_width_, backgraound_height_);
+    keyboard_.setTextIndentation();
     //Allocate the buffer associated with keyboard.
-    memset(buffer, 0, sizeof(buffer));
-    keyboard.setBuffer(buffer, BUFFER_SIZE);
+    memset(buffer_, 0, sizeof(buffer_));
+    keyboard_.setBuffer(buffer_, BUFFER_SIZE);
     
     modePressedHandler();
     
@@ -162,39 +158,39 @@ CustomKeyboard::CustomKeyboard() :
     Unicode::snprintf(message_buffer_, 9, "%s", msg);
     message_.invalidate();
     
-    firstCharacterEntry = true;
+    firstCharacterEntry_ = true;
   }
   
   void CustomKeyboard::enterPasswordPressedHandler()
   {	
-    HAL::getInstance()->blockCopy(bufferPassword, buffer, 15 * sizeof(buffer) / BUFFER_SIZE);
+    HAL::getInstance()->blockCopy(bufferPassword_, buffer_, 15 * sizeof(buffer_) / BUFFER_SIZE);
     
     if (checkAccount()) {
-      if (checkAccountCallback && checkAccountCallback->isValid())
+      if (checkAccountCallback_ && checkAccountCallback_->isValid())
       {
-        checkAccountCallback->execute(true);
+        checkAccountCallback_->execute(true);
       }
     }
     else
     {
-      if (checkAccountCallback && checkAccountCallback->isValid())
+      if (checkAccountCallback_ && checkAccountCallback_->isValid())
       {
-        checkAccountCallback->execute(false);
+        checkAccountCallback_->execute(false);
       }
     }
     
-    firstCharacterEntry = true;
-    uppercaseKeys = true;
+    firstCharacterEntry_ = true;
+    uppercaseKeys_ = true;
     
     modePressedHandler();
     
-    keyboard.setLayout(&layout);
-    keyboard.setKeyListener(keyPressed);	
-    keyboard.setPosition(0, 0, 640, 392);
-    keyboard.setTextIndentation();
+    keyboard_.setLayout(&layoutEnglish);
+    keyboard_.setKeyListener(keyPressed_);	
+    keyboard_.setPosition(0, 0, backgraound_width_, backgraound_height_);
+    keyboard_.setTextIndentation();
     
-    memset(buffer, 0, 15 * sizeof(buffer) / BUFFER_SIZE);
-    keyboard.setBuffer(buffer, BUFFER_SIZE);
+    memset(buffer_, 0, 15 * sizeof(buffer_) / BUFFER_SIZE);
+    keyboard_.setBuffer(buffer_, BUFFER_SIZE);
     
     Unicode::UnicodeChar list[] = { 0x0055, 0x0053, 0x0045, 0x0052 };
     Unicode::snprintf(message_buffer_, 5, "%s", list);
@@ -205,17 +201,17 @@ CustomKeyboard::CustomKeyboard() :
   void CustomKeyboard::setTouchable(bool touch)
   {
     Container::setTouchable(touch);
-    keyboard.setTouchable(touch);
+    keyboard_.setTouchable(touch);
   }
   
   void CustomKeyboard::moveCursor() 
   {
-    uint16_t pos = keyboard.getBufferPosition();
+    uint16_t pos = keyboard_.getBufferPosition();
     uint16_t cursorPosition = cursor_begin_x_;
     
     for (int i = 0; i < pos; i++)
     {
-      cursorPosition += shiftCursor[buffer[i]];
+      cursorPosition += shiftCursor[buffer_[i]];
     }
     
     cursor_.setPosition(cursorPosition, cursor_begin_y_, 6, 60);
@@ -224,31 +220,31 @@ CustomKeyboard::CustomKeyboard() :
   bool CustomKeyboard::checkAccount()
   {
     //EDT, 3038
-    if (bufferUser[0] == 69 &&
-        bufferUser[1] == 68 &&
-          bufferUser[2] == 84 &&
-            bufferUser[3] == 00 &&
-              bufferPassword[0] == 51 &&
-		bufferPassword[1] == 48 &&
-                  bufferPassword[2] == 51 &&
-                    bufferPassword[3] == 56 && 
-                      bufferPassword[4] == 00 )
+    if (bufferUser_[0] == 69 &&
+        bufferUser_[1] == 68 &&
+          bufferUser_[2] == 84 &&
+            bufferUser_[3] == 00 &&
+              bufferPassword_[0] == 51 &&
+		bufferPassword_[1] == 48 &&
+                  bufferPassword_[2] == 51 &&
+                    bufferPassword_[3] == 56 && 
+                      bufferPassword_[4] == 00 )
     {
       return true;
     }
     
     //ROJAR, 3683
-    if (bufferUser[0] == 82 &&
-        bufferUser[1] == 79 &&
-          bufferUser[2] == 74 &&
-            bufferUser[3] == 65 &&
-              bufferUser[4] == 82 &&
-		bufferUser[5] == 00 &&
-                  bufferPassword[0] == 51 &&
-                    bufferPassword[1] == 54 &&
-                      bufferPassword[2] == 56 &&
-                        bufferPassword[3] == 51 &&
-                          bufferPassword[4] == 00)
+    if (bufferUser_[0] == 82 &&
+        bufferUser_[1] == 79 &&
+          bufferUser_[2] == 74 &&
+            bufferUser_[3] == 65 &&
+              bufferUser_[4] == 82 &&
+		bufferUser_[5] == 00 &&
+                  bufferPassword_[0] == 51 &&
+                    bufferPassword_[1] == 54 &&
+                      bufferPassword_[2] == 56 &&
+                        bufferPassword_[3] == 51 &&
+                          bufferPassword_[4] == 00)
     {
       return true;
     }
@@ -280,6 +276,6 @@ CustomKeyboard::CustomKeyboard() :
   {
     for (int i = 0; i < length; i++)
     {
-      user[i] = bufferUser[i];
+      user[i] = bufferUser_[i];
     }
   }
