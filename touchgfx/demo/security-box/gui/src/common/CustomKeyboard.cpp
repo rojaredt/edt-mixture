@@ -34,7 +34,7 @@ CustomKeyboard::CustomKeyboard() :
        
     setKeyMappingList();
     
-    cursor_.setPosition(cursor_begin_x_, cursor_begin_y_, 10, 60);
+    cursor_.setPosition(cursor_begin_x_, cursor_begin_y_, cursor_width_x_, cursor_height_y_);
     cursor_.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 145, 45));
     cursor_.setAlpha(255);
     
@@ -214,7 +214,7 @@ CustomKeyboard::CustomKeyboard() :
       cursorPosition += shiftCursor[buffer_[i]];
     }
     
-    cursor_.setPosition(cursorPosition, cursor_begin_y_, 6, 60);
+    cursor_.setPosition(cursorPosition, cursor_begin_y_, cursor_width_x_, cursor_height_y_);
   }
   
   bool CustomKeyboard::checkAccount()

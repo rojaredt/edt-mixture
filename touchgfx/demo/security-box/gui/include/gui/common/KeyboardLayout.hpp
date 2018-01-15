@@ -52,17 +52,18 @@ static const Keyboard::Key keyArrayEnglish[30] =
 
 static const Keyboard::Key keyArrayNumber[30] =
 {
-	{ 1, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 2, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 3, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    
-    { 4, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 5, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 6, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    
-    { 7, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 8, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
-    { 9, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+	{  1, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  2, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  3, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 00.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+       
+    {  4, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  5, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  6, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+        
+    {  7, Rect((uint16_t)(109.0f + 13.25f * scale * 00.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  8, Rect((uint16_t)(109.0f + 13.25f * scale * 01.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    {  9, Rect((uint16_t)(109.0f + 13.25f * scale * 02.0f), (uint16_t)(144.0f + 10.00f * scale * 02.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
+    { 10, Rect((uint16_t)(109.0f + 13.25f * scale * 03.0f), (uint16_t)(144.0f + 10.00f * scale * 01.0f), key_number_width, key_number_height), BITMAP_NUMBERPAD_KEY_PRESS_ID },
 };
 
 

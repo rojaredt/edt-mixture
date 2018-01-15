@@ -44,6 +44,8 @@ public:
 private:
   static const uint16_t cursor_begin_x_ = 28;
   static const uint16_t cursor_begin_y_ = 40;
+  static const uint16_t cursor_width_x_ = 6;
+  static const uint16_t cursor_height_y_ = 60;
   static const uint16_t backgraound_width_  = 662;
   static const uint16_t backgraound_height_ = 412;
   /*
