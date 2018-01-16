@@ -25,10 +25,6 @@ public:
 protected:	
 	MoveAnimator<Image> background_;
 	MoveAnimator<Image> mask_result_;
-	//MoveAnimator<Image> mask_error_;
-
-	MoveAnimator<TextAreaWithOneWildcard> message_title_;
-	Unicode::UnicodeChar message_title_buffer_[10];
 
 private:
 	static const int16_t backgraound_begin_x_ = -630;
@@ -40,15 +36,11 @@ private:
 	Callback<Mask, const MoveAnimator<Image>& > backgroundMoveOutEndedCallback_;
 	Callback<Mask, const MoveAnimator<Image>& > maskResultMoveInEndedCallback_;
 	Callback<Mask, const MoveAnimator<Image>& > maskResultMoveOutEndedCallback_;
-	Callback<Mask, const MoveAnimator<TextAreaWithOneWildcard>& > titleMessageMoveInEndedCallback_;
-	Callback<Mask, const MoveAnimator<TextAreaWithOneWildcard>& > titleMessageMoveOutEndedCallback_;
 	
 	void backgroundMoveInEndedHandler(const MoveAnimator<Image>& source);
 	void backgroundMoveOutEndedHandler(const MoveAnimator<Image>& source);
 	void maskResultMoveInEndedHandler(const MoveAnimator<Image>& source);
 	void maskResultMoveOutEndedHandler(const MoveAnimator<Image>& source);
-	void titleMessageMoveInEndedHandler(const MoveAnimator<TextAreaWithOneWildcard>& source);
-	void titleMessageMoveOutEndedHandler(const MoveAnimator<TextAreaWithOneWildcard>& source);
 };
 
 #endif /* MASK_HPP_ */

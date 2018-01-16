@@ -2093,6 +2093,12 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_KohinoorBangla_24_4bpp.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_KohinoorBangla_26_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_KohinoorBangla_32_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_Roboto_Medium_40_4bpp.cpp</name>
         </file>
         <file>
@@ -2111,6 +2117,12 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_KohinoorBangla_24_4bpp.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_KohinoorBangla_26_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_KohinoorBangla_32_4bpp.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_Roboto_Medium_40_4bpp.cpp</name>
         </file>
         <file>
@@ -2124,6 +2136,12 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_KohinoorBangla_24_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_KohinoorBangla_26_4bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_KohinoorBangla_32_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_Roboto_Medium_40_4bpp.cpp</name>
@@ -2170,26 +2188,20 @@
       </group>
       <group>
         <name>images</name>
-        <group>
-          <name>__designer</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\__designer\Blue_Buttons_Round_Edge_large.cpp</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\__designer\Blue_Buttons_Round_Edge_large_pressed.cpp</name>
-          </file>
-        </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\bg_info.cpp</name>
-        </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\BitmapDatabase.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\edtlogo_large.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log__press.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log_release.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\english_keyboard_background.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\info_background.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\info_press.cpp</name>
@@ -2210,16 +2222,28 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_mask.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\lock_on.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_mask_correct.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\locked_off.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\keyboard_mask_error.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\lock_off.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\lock_on.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\log_press.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\log_rlease.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\logo_edt.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\logo_smart_embedded.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\main_backgraound.cpp</name>
@@ -2237,19 +2261,16 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\numberpad_key_press.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\return_p.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\return_press.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\return_r.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\return_release.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\setting_release.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\settings_press.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\smart_embedded_logo.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\wifi_off.cpp</name>
