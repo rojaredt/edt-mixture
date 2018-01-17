@@ -32,6 +32,7 @@ private:
 	int hours_;
 	int minutes_;
 	int seconds_;
+	int connect_ani_count_;
 };
 
 #endif // MAIN_VIEW_HPP

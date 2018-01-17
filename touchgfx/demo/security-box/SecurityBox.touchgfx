@@ -4,28 +4,9 @@
       {
         "Components": [
           {
-            "Color": {
-              "Red": 107,
-              "Green": 111,
-              "Blue": 112
-            },
-            "Alpha": 255,
-            "Name": "backgroundBox",
-            "X": 0,
-            "Y": 0,
-            "Width": 800,
-            "Height": 480,
-            "Type": "Box",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "RelativeFilename": "main_background.png",
             "Alpha": 255,
-            "Name": "image6",
+            "Name": "imageBackground",
             "X": 0,
             "Y": 0,
             "Width": 800,
@@ -39,12 +20,50 @@
           },
           {
             "Color": {
+              "Red": 70,
+              "Green": 70,
+              "Blue": 70
+            },
+            "Alpha": 60,
+            "Name": "boxBackground5",
+            "X": 704,
+            "Y": 384,
+            "Width": 96,
+            "Height": 96,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 140,
+              "Green": 140,
+              "Blue": 140
+            },
+            "Alpha": 30,
+            "Name": "boxBackground4",
+            "X": 708,
+            "Y": 288,
+            "Width": 92,
+            "Height": 96,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
               "Red": 196,
               "Green": 196,
               "Blue": 196
             },
             "Alpha": 40,
-            "Name": "box1",
+            "Name": "boxBackground3",
             "X": 708,
             "Y": 192,
             "Width": 92,
@@ -63,29 +82,10 @@
               "Blue": 140
             },
             "Alpha": 30,
-            "Name": "box1_1",
+            "Name": "boxBackground2",
             "X": 708,
-            "Y": 288,
+            "Y": 96,
             "Width": 92,
-            "Height": 96,
-            "Type": "Box",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 70,
-              "Green": 70,
-              "Blue": 70
-            },
-            "Alpha": 60,
-            "Name": "box1_1_1",
-            "X": 704,
-            "Y": 384,
-            "Width": 96,
             "Height": 96,
             "Type": "Box",
             "Visible": true,
@@ -222,31 +222,12 @@
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
-            "Name": "textArea1",
+            "Name": "textAreaDateTime",
             "X": 31,
             "Y": 440,
             "Width": 144,
             "Height": 29,
             "Type": "TextArea",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 140,
-              "Green": 140,
-              "Blue": 140
-            },
-            "Alpha": 30,
-            "Name": "box1_1_2",
-            "X": 708,
-            "Y": 96,
-            "Width": 92,
-            "Height": 96,
-            "Type": "Box",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,

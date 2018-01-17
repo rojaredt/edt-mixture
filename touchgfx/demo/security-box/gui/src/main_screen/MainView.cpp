@@ -6,7 +6,8 @@ MainView::MainView()
 	tickCounter_(0),
 	hours_(8),
 	minutes_(16),
-	seconds_(32)
+	seconds_(32),
+	connect_ani_count_(0)
 {
 	keyboard.setPosition(23, 35, 662, 412);
 	keyboard.setCheckAccountAction(checkAccountCallback);
@@ -57,6 +58,30 @@ void MainView::handleTickEvent()
 		}
 
 		digitalClock_.setTime24Hour(hours_, minutes_, seconds_);		
+
+		connect_ani_count_++;
+
+		if (1 == connect_ani_count_) 
+		{
+			imageConnect.setBitmap(Bitmap(BITMAP_WIFI_ON_0_ID));
+			imageConnect.invalidate();
+		}
+		else if (2 == connect_ani_count_)
+		{
+			imageConnect.setBitmap(Bitmap(BITMAP_WIFI_ON_1_ID));
+			imageConnect.invalidate();
+		}
+		else if (3 == connect_ani_count_)
+		{
+			imageConnect.setBitmap(Bitmap(BITMAP_WIFI_ON_2_ID));
+			imageConnect.invalidate();
+			connect_ani_count_ = -1;
+		}
+		else if(0 == connect_ani_count_)
+		{
+			imageConnect.setBitmap(Bitmap(BITMAP_WIFI_ON_ID));
+			imageConnect.invalidate();
+		}		
 	}
 }
 
