@@ -20,25 +20,6 @@
           },
           {
             "Color": {
-              "Red": 70,
-              "Green": 70,
-              "Blue": 70
-            },
-            "Alpha": 60,
-            "Name": "boxBackground5",
-            "X": 704,
-            "Y": 384,
-            "Width": 96,
-            "Height": 96,
-            "Type": "Box",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
               "Red": 140,
               "Green": 140,
               "Blue": 140
@@ -1253,7 +1234,7 @@
             "Moveable": false
           },
           {
-            "Pressed": "clear_unlock_log__press.png",
+            "Pressed": "clear_unlock_log_press.png",
             "Released": "clear_unlock_log_release.png",
             "Alpha": 255,
             "TextId": "SingleUseId4",

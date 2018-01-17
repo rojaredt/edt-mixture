@@ -2192,7 +2192,7 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\BitmapDatabase.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log__press.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log_press.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log_release.cpp</name>

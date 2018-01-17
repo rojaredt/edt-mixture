@@ -170,6 +170,27 @@ static void BackendTask(void* pvParameters)
             
             xQueueSend(xQueueTX, ( void * )&xMessageTX, 0); 
           }
+        } else if(xMessageRX.id == 3)
+        {
+          HAL_FLASH_Unlock();
+          
+          // Erase.
+          EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+          EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+          EraseInitStruct.Sector        = FLASH_SECTOR_7;
+          EraseInitStruct.NbSectors     = 1;
+          
+          if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
+          {    
+            /*
+            Error occurred while sector erase.
+            User can add here some code to deal with this error.
+            SECTORError will contain the faulty sector and then to know the code error on this sector,
+            user can call function 'HAL_FLASH_GetError()'
+            */
+          }
+          
+          HAL_FLASH_Lock();
         }
       }
     }

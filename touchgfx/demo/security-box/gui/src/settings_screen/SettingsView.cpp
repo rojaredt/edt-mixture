@@ -15,3 +15,8 @@ void SettingsView::tearDownScreen()
 {
 
 }
+
+void SettingsView::clearUnlockLog()
+{
+	presenter->clearUnlockLog();
+}

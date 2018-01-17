@@ -6,16 +6,7 @@ LogView::LogView(): firstTime(0)
 }
 
 void LogView::setupScreen()
-{
-  //textAreaMainNo1.setVisible(false);
-  //textAreaMainNo2.setVisible(false);
-  //textAreaMainNo3.setVisible(false);
-  //textAreaMainNo4.setVisible(false);
-  //textAreaMainNo5.setVisible(false);
-  //textAreaMainNo6.setVisible(false);
-  //textAreaMainNo7.setVisible(false);
-  //textAreaMainNo8.setVisible(false);
-  
+{ 
   textAreaMainName1.setVisible(false);
   textAreaMainName2.setVisible(false);
   textAreaMainName3.setVisible(false);

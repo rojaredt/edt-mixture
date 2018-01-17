@@ -15,3 +15,8 @@ void SettingsPresenter::deactivate()
 {
 
 }
+
+void SettingsPresenter::clearUnlockLog()
+{	
+	model->pushData(3);
+}

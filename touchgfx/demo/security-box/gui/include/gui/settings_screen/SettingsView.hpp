@@ -11,7 +11,8 @@ public:
     virtual ~SettingsView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-protected:
+	virtual void clearUnlockLog();
+protected:	
 };
 
 #endif // SETTINGS_VIEW_HPP
