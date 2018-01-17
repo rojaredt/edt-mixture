@@ -2105,7 +2105,7 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_Roboto_Medium_48_4bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_24_4bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_RobotoCondensed_Regular_26_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\FontGetters.cpp</name>
@@ -2129,7 +2129,7 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_Roboto_Medium_48_4bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_24_4bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_RobotoCondensed_Regular_26_4bpp.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_FiraMono_Medium_24_4bpp.cpp</name>
@@ -2150,7 +2150,7 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_Roboto_Medium_48_4bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_24_4bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_RobotoCondensed_Regular_26_4bpp.cpp</name>
         </file>
       </group>
       <group>
@@ -2198,6 +2198,9 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\clear_unlock_log_release.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\config_background.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\english_keyboard_background.cpp</name>
         </file>
         <file>
@@ -2234,10 +2237,22 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\lock_on.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\log_background.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\log_list_background.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\log_press.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\log_rlease.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\log_title.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\log_title_background.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\logo_edt.cpp</name>
@@ -2246,7 +2261,7 @@
           <name>$PROJ_DIR$\..\..\generated\images\src\logo_smart_embedded.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\main_backgraound.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\images\src\main_background.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\numberpad_background.cpp</name>
@@ -2277,6 +2292,15 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\images\src\wifi_on.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\wifi_on_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\wifi_on_1.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\images\src\wifi_on_2.cpp</name>
         </file>
       </group>
       <group>
