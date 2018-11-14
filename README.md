@@ -1,3 +1,7 @@
+## The project move to https://github.com/rojarsmith/bootstm
+
+https://github.com/rojarsmith/bootstm
+
 # edt-mixture
 The Open Source BSP for edt Smart Embedded.
 
